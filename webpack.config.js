@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   mode: 'development', 
   entry : {
-    main: './src/app.js'
+    main: './app.js'
   }, 
   output: {
     path: path.resolve('./dist'), 
@@ -32,6 +32,11 @@ module.exports = {
           name: '[name].[ext]?[hash]',
           limit: 20000, //2kb
         },
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
       }
     ]
   },
@@ -57,6 +62,10 @@ module.exports = {
       }
     }),
     new CleanWebpackPlugin(),
-    process.env.NODE_ENV === 'production' && new MiniCssExtractPlugin({filename: '[name].css'})
+    ...(
+      process.env.NODE_ENV === 'production'
+      ? [ new MiniCssExtractPlugin({filename: '[name].css'}) ]
+      : []
+    )
   ]
 }  
