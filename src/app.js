@@ -1,11 +1,16 @@
-import './app.css';
-import nyancat from './nyancat.jpeg';
+import "./app.css";
+import nyancat from "./nyancat.jpeg";
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   document.body.innerHTML = `
     <img src="${nyancat}" />
-  `
-})
+  `;
+});
 
-console.log(process.env.NODE_ENV);
-console.log(api.domain);
+console.log(
+  "매우 긴 문장 입나--------- -------------- 다 ------------하 ----------------------"
+);
+
+var foo = "";
+
+console.log();
