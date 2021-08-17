@@ -10,7 +10,3 @@ document.addEventListener("DOMContentLoaded", () => {
 console.log(
   "매우 긴 문장 입나--------- -------------- 다 ------------하 ----------------------"
 );
-
-var foo = "";
-
-console.log();
